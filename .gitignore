@@ -1,16 +1,21 @@
+# El despliegue se sube por git y en el servidor no hay composer ni npm:
+# por eso «vendor» y «public/build» sí se versionan. «node_modules» no, porque
+# solo hace falta para compilar: lo que el navegador usa ya está en
+# «public/build». «public/hot» tampoco: si llega al servidor, la aplicación
+# busca los recursos en el Vite de desarrollo y la página sale en blanco.
+# «public/storage» sí viaja, como enlace relativo, porque en el servidor no
+# se puede correr «php artisan storage:link» y sin él no se ven las fotografías.
+
 /.phpunit.cache
 /bootstrap/ssr
 /node_modules
-/public/build
 /public/fonts-manifest.dev.json
 /public/hot
-/public/storage
 /storage/*.key
 /storage/pail
 /resources/js/actions
 /resources/js/routes
 /resources/js/wayfinder
-/vendor
 .DS_Store
 .env
 .env.backup

@@ -348,10 +348,21 @@ abstract class CargaMasiva
 
         foreach (['d-m-Y', 'd/m/Y', 'Y-m-d', 'd-m-y', 'd/m/y'] as $formato) {
             try {
-                return Carbon::createFromFormat($formato.'|', $valor)->toDateString();
+                $fecha = Carbon::createFromFormat($formato.'|', $valor);
             } catch (\Exception) {
                 continue;
             }
+
+            // PHP no falla ante un día que no existe: «32-12-2026» se
+            // convierte solo en el 1 de enero. Se descarta para que la
+            // revisión previa lo marque en vez de guardar otra fecha.
+            $avisos = Carbon::getLastErrors();
+
+            if (is_array($avisos) && $avisos['warning_count'] > 0) {
+                continue;
+            }
+
+            return $fecha->toDateString();
         }
 
         return null;

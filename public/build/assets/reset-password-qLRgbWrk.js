@@ -1,0 +1,141 @@
+import { c as e, l as t, s as n, u as r } from './wayfinder-C8dNLrFV.js';
+import { t as i } from './button-BzkMvCJO.js';
+import { t as a } from './password-input-CZIsfcUs.js';
+import { Tt as o } from './app-Bu9EFUG6.js';
+import { t as s } from './input-error-Bxj_sbd5.js';
+import { t as c } from './label-D0AQUEbO.js';
+import { t as l } from './spinner-DtbIIn34.js';
+import { r as u } from './password-Cm2HlzMZ.js';
+var d = e(),
+    f = n();
+function p(e) {
+    let n = (0, d.c)(12),
+        { token: p, email: m, passwordRules: h } = e,
+        g;
+    n[0] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((g = (0, f.jsx)(r, { title: `Restablecer contraseña` })), (n[0] = g))
+        : (g = n[0]);
+    let _;
+    n[1] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((_ = u.form()), (n[1] = _))
+        : (_ = n[1]);
+    let v;
+    n[2] !== m || n[3] !== p
+        ? ((v = (e) => ({ ...e, token: p, email: m })),
+          (n[2] = m),
+          (n[3] = p),
+          (n[4] = v))
+        : (v = n[4]);
+    let y;
+    n[5] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((y = [`password`, `password_confirmation`]), (n[5] = y))
+        : (y = n[5]);
+    let b;
+    n[6] !== m || n[7] !== h
+        ? ((b = (e) => {
+              let { processing: t, errors: n } = e;
+              return (0, f.jsxs)(`div`, {
+                  className: `grid gap-6`,
+                  children: [
+                      (0, f.jsxs)(`div`, {
+                          className: `grid gap-2`,
+                          children: [
+                              (0, f.jsx)(c, {
+                                  htmlFor: `email`,
+                                  children: `Correo electrónico`,
+                              }),
+                              (0, f.jsx)(o, {
+                                  id: `email`,
+                                  type: `email`,
+                                  name: `email`,
+                                  autoComplete: `email`,
+                                  value: m,
+                                  className: `mt-1 block w-full`,
+                                  readOnly: !0,
+                              }),
+                              (0, f.jsx)(s, {
+                                  message: n.email,
+                                  className: `mt-2`,
+                              }),
+                          ],
+                      }),
+                      (0, f.jsxs)(`div`, {
+                          className: `grid gap-2`,
+                          children: [
+                              (0, f.jsx)(c, {
+                                  htmlFor: `password`,
+                                  children: `Contraseña`,
+                              }),
+                              (0, f.jsx)(a, {
+                                  id: `password`,
+                                  name: `password`,
+                                  autoComplete: `new-password`,
+                                  className: `mt-1 block w-full`,
+                                  autoFocus: !0,
+                                  placeholder: `Contraseña`,
+                                  passwordrules: h,
+                              }),
+                              (0, f.jsx)(s, { message: n.password }),
+                          ],
+                      }),
+                      (0, f.jsxs)(`div`, {
+                          className: `grid gap-2`,
+                          children: [
+                              (0, f.jsx)(c, {
+                                  htmlFor: `password_confirmation`,
+                                  children: `Confirmar contraseña`,
+                              }),
+                              (0, f.jsx)(a, {
+                                  id: `password_confirmation`,
+                                  name: `password_confirmation`,
+                                  autoComplete: `new-password`,
+                                  className: `mt-1 block w-full`,
+                                  placeholder: `Confirmar contraseña`,
+                                  passwordrules: h,
+                              }),
+                              (0, f.jsx)(s, {
+                                  message: n.password_confirmation,
+                                  className: `mt-2`,
+                              }),
+                          ],
+                      }),
+                      (0, f.jsxs)(i, {
+                          type: `submit`,
+                          className: `mt-4 w-full`,
+                          disabled: t,
+                          'data-test': `reset-password-button`,
+                          children: [t && (0, f.jsx)(l, {}), `Reset password`],
+                      }),
+                  ],
+              });
+          }),
+          (n[6] = m),
+          (n[7] = h),
+          (n[8] = b))
+        : (b = n[8]);
+    let x;
+    return (
+        n[9] !== v || n[10] !== b
+            ? ((x = (0, f.jsxs)(f.Fragment, {
+                  children: [
+                      g,
+                      (0, f.jsx)(t, {
+                          ..._,
+                          transform: v,
+                          resetOnSuccess: y,
+                          children: b,
+                      }),
+                  ],
+              })),
+              (n[9] = v),
+              (n[10] = b),
+              (n[11] = x))
+            : (x = n[11]),
+        x
+    );
+}
+p.layout = {
+    title: `Restablecer contraseña`,
+    description: `Ingrese su nueva contraseña`,
+};
+export { p as default };

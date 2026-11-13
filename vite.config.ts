@@ -64,6 +64,12 @@ export default defineConfig({
         singleAttributePerLine: false,
         htmlWhitespaceSensitivity: 'css',
         ignorePatterns: [
+            // «vendor» y «public/build» se versionan para desplegar sin
+            // Composer ni npm, así que hay que excluirlos aquí a mano: el
+            // .gitignore ya no los filtra.
+            'vendor/**',
+            'node_modules/**',
+            'public/**',
             '.github/**',
             'composer.json',
             'resources/js/components/ui/*',

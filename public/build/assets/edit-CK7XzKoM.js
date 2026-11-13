@@ -1,0 +1,63 @@
+import { c as e, s as t, u as n } from './wayfinder-C8dNLrFV.js';
+import { r, y as i } from './app-Bu9EFUG6.js';
+import { t as a } from './PersonaRecursoHumanoController-Bzb79B_s.js';
+import { t as o } from './formulario-persona-DLUb85He.js';
+var s = e(),
+    c = t();
+function l(e) {
+    let t = (0, s.c)(16),
+        { persona: i, opciones: l } = e,
+        u = `Editar ${i.nombre_completo}`,
+        d;
+    t[0] === u
+        ? (d = t[1])
+        : ((d = (0, c.jsx)(n, { title: u })), (t[0] = u), (t[1] = d));
+    let f;
+    t[2] === i.nombre_completo
+        ? (f = t[3])
+        : ((f = (0, c.jsx)(r, {
+              title: i.nombre_completo,
+              description: `Actualice los datos del registro`,
+          })),
+          (t[2] = i.nombre_completo),
+          (t[3] = f));
+    let p;
+    t[4] === i.id
+        ? (p = t[5])
+        : ((p = a.update.form(i.id)), (t[4] = i.id), (t[5] = p));
+    let m;
+    t[6] !== l || t[7] !== i || t[8] !== p
+        ? ((m = (0, c.jsx)(o, {
+              accion: p,
+              persona: i,
+              opciones: l,
+              textoBoton: `Guardar cambios`,
+          })),
+          (t[6] = l),
+          (t[7] = i),
+          (t[8] = p),
+          (t[9] = m))
+        : (m = t[9]);
+    let h;
+    t[10] !== f || t[11] !== m
+        ? ((h = (0, c.jsxs)(`div`, {
+              className: `space-y-6 px-4 py-6`,
+              children: [f, m],
+          })),
+          (t[10] = f),
+          (t[11] = m),
+          (t[12] = h))
+        : (h = t[12]);
+    let g;
+    return (
+        t[13] !== d || t[14] !== h
+            ? ((g = (0, c.jsxs)(c.Fragment, { children: [d, h] })),
+              (t[13] = d),
+              (t[14] = h),
+              (t[15] = g))
+            : (g = t[15]),
+        g
+    );
+}
+l.layout = { breadcrumbs: [{ title: `Recurso humano`, href: i() }] };
+export { l as default };

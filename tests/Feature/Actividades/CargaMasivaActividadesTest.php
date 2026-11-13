@@ -183,6 +183,23 @@ test('no repite el error con el nombre técnico del campo', function () {
             ->where('revision.filas.0.errores.1', 'Fecha: «mañana» no es una fecha válida (use dd-mm-aaaa).'));
 });
 
+test('rechaza una fecha que no existe en vez de correrla al día siguiente', function () {
+    actingAs($this->coordinador)
+        ->post(route('actividades.carga-masiva.revision'), [
+            'archivo' => archivoDeActividades([
+                // Sin revisar el aviso de PHP, «32-12-2026» se guardaría como
+                // el 1 de enero y «29-02-2027» como el 1 de marzo.
+                ['Kermés navideña', '32-12-2026', '', '', 'Cultura', 'Concierto', 'Arte y cultura', '', 'Plaza', '', 'No', ''],
+                ['Día inexistente', '29-02-2027', '', '', 'Cultura', 'Concierto', 'Arte y cultura', '', 'Plaza', '', 'No', ''],
+            ]),
+        ])
+        ->assertOk()
+        ->assertInertia(fn ($pagina) => $pagina
+            ->where('revision.resumen.validas', 0)
+            ->where('revision.filas.0.errores.0', 'Fecha: «32-12-2026» no es una fecha válida (use dd-mm-aaaa).')
+            ->where('revision.filas.1.errores.0', 'Fecha: «29-02-2027» no es una fecha válida (use dd-mm-aaaa).'));
+});
+
 test('el coordinador no puede programar en otra unidad', function () {
     Unidad::factory()->create(['nombre' => 'Deportes']);
 

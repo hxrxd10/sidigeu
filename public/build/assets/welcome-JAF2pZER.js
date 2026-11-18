@@ -197,7 +197,7 @@ function C() {
         ? ((h = (0, b.jsx)(`p`, {
             className: `mx-auto mt-6 max-w-2xl asomar entrada-lectura text-muted-foreground`,
             style: S(2),
-            children: `DIGEU promueve el desarrollo sobre la base de una verdadera proyección popular: acerca a estudiantes, docentes y personal administrativo a las manifestaciones científicas, artísticas, culturales y deportivas del país.`,
+            children: `La DIGEU promueve el desarrollo sobre la base de una verdadera proyección popular: acerca a estudiantes, docentes y personal administrativo a las manifestaciones científicas, artísticas, culturales y deportivas del país.`,
         })),
             (e[4] = h))
         : (h = e[4]);

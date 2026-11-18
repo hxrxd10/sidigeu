@@ -20,6 +20,6 @@ jobs:
       - name: 🚀 Deploy en servidor
         run: |
           ssh -p 65002 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd /home/u118147758/domains/digeu.edu.gt/Merry-Goin
+            cd /home/u118147758/domains/digeu.edu.gt/sidigeu
             git pull origin main
           EOF

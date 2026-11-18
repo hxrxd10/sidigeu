@@ -98,7 +98,7 @@ export default function Welcome() {
                         className="mx-auto mt-5 max-w-4xl asomar titular-display text-digeu-navy dark:text-white"
                         style={retraso(1)}
                     >
-                        La extensión universitaria, al alcance de todos
+                        Extensión universitaria, al alcance de todos
                     </h1>
 
                     <p

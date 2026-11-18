@@ -188,7 +188,7 @@ function C() {
         ? ((c = (0, b.jsx)(`h1`, {
             className: `mx-auto mt-5 max-w-4xl asomar titular-display text-digeu-navy dark:text-white`,
             style: S(1),
-            children: `Extensión universitaria, al alcance de todos`,
+            children: `Extensión universitaria, al alcance de todas y todos`,
         })),
             (e[3] = c))
         : (c = e[3]);
